@@ -10,7 +10,7 @@ function App() {
   const [houseMove,setHouseMove] = useState("")
   const [loading,setLoading] = useState(true)
   const [start,setStart] = useState(false)
-
+  const [round, setRound] =useState(0)
 
   useEffect(()=>{
     setTimeout(()=>{
@@ -19,11 +19,16 @@ function App() {
         updateScore(newScore)
     },1000)
     return (()=>{setLoading(true)})
-},[currentMove])
+},[currentMove,round])
 
   useEffect(()=>{
     setHouseMove(houseMovePicker())
-  },[])
+  },[round])
+  
+  const NextMove = (move:string) =>{
+    setRound(round+1)
+    setMove(move)
+  }
 
 
   return (
@@ -31,7 +36,7 @@ function App() {
     <div className="App">
     <Heading score={score} loading={loading}/>
     {start?(<><PlayArea house={houseMove} move={currentMove} loading={loading}/>
-    <Controls setMove={setMove}/></>):(<button className="btn-start" onClick={()=>setStart(true)}>Start</button>)}
+    <Controls setMove={NextMove}/></>):(<button className="btn-start" onClick={()=>setStart(true)}>Start</button>)}
     </div>
   );
 }
