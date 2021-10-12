@@ -20,11 +20,13 @@ function App() {
     return (()=>{setLoading(true)})
 },[round])
 
+const upscore = (v:number) =>{
+  updateScore(score+v)
+}
 useEffect(()=>{
-  const newScore = score + ScoreAdder(currentMove,houseMove)
-  console.log(newScore)
-  updateScore(newScore)
-},[round,currentMove,houseMove,score])
+  const adder= ScoreAdder(currentMove,houseMove)
+  upscore(adder)
+},[round,currentMove,houseMove])
 
   
   const NextMove = (move:string) =>{
