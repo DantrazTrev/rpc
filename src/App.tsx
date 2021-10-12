@@ -26,6 +26,7 @@ const upscore = (v:number) =>{
 useEffect(()=>{
   const adder= ScoreAdder(currentMove,houseMove)
   upscore(adder)
+     // eslint-disable-next-line react-hooks/exhaustive-deps
 },[round,currentMove,houseMove])
 
   
