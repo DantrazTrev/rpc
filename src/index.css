@@ -3,6 +3,8 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color:white;
+  background-color:black ;
 }
 
 .heading{
@@ -12,10 +14,31 @@ body {
 .btn{
   font-weight: 100;
   margin: 10px;
+  font-family: 'Open Sans Condensed', sans-serif;
   background-color: rgba(240, 248, 255, 0);
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   text-transform: uppercase;
   cursor: pointer;
+  color: rgb(255, 255, 255);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 
+}
+.btn-start{
+  font-weight: 500;
+  margin: 10px;
+  letter-spacing: 0.5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: rgb(240, 240, 240);
+  background-color: rgba(240, 248, 255, 0);
+  border: 1px solid rgb(255, 255, 255);
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 20px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+.btn:hover,.btn-start:hover{
+  background-color: white;
+  color:black;
 }

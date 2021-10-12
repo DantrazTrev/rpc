@@ -1,7 +1,14 @@
 import React from 'react';
+const Heading = (props:IProps) =>{
 
-const Heading = () =>{
-    return (<h1 className="heading">ROCK PAPER SCISSOR </h1>)
+    return (<><h1 className="heading">ROCK PAPER SCISSOR </h1>
+            <h3>Score: {props.score}</h3></>
+        )
 }
 
+
+interface IProps{
+    score:number,
+    loading:boolean
+}
 export default Heading

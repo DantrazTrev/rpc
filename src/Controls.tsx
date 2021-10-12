@@ -2,7 +2,7 @@ import React from 'react';
 
 const Controls = (props:Control) =>{
 
-    const buttons =["Rock","Paper","Scissor"]
+    const buttons =["Rock","Paper","Scissors"]
 
     return (<div className="btns">
        { buttons.map((btn)=>{
