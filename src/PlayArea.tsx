@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 const PlayArea = (props:Moves) =>{
-
+    const Lo = props.loading ? "" : (props.move +' vs ' +props.house)
     return (
-    <div >{props.loading ? "" : (props.move +' vs ' +props.house)} </div>)
+        <div >{props.round === 0? "Let's Start" : Lo } </div>)
 }
 
 interface Moves{
     move: string;
     house: string,
-    loading:boolean
+    loading:boolean,
+    round:number
 }
 
 export default PlayArea

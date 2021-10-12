@@ -35,7 +35,7 @@ function App() {
    
     <div className="App">
     <Heading score={score} loading={loading}/>
-    {start?(<><PlayArea house={houseMove} move={currentMove} loading={loading}/>
+    {start?(<><PlayArea house={houseMove} round={round} move={currentMove} loading={loading}/>
     <Controls setMove={NextMove}/></>):(<button className="btn-start" onClick={()=>setStart(true)}>Start</button>)}
     </div>
   );
