@@ -24,7 +24,7 @@ useEffect(()=>{
   const newScore = score + ScoreAdder(currentMove,houseMove)
   console.log(newScore)
   updateScore(newScore)
-},[round,currentMove,houseMove])
+},[round,currentMove,houseMove,score])
 
   
   const NextMove = (move:string) =>{
