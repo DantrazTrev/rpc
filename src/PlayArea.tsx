@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const PlayArea = (props:Moves) =>{
-    const Lo = props.loading ? "" : (props.move +' vs ' +props.house)
+  
+    const Lo = props.loading ? "3 2 1..." : (props.move +' vs ' +props.house)
     return (
         <div >{props.round === 0? "Let's Start" : Lo } </div>)
 }

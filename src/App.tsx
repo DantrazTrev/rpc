@@ -15,19 +15,22 @@ function App() {
   useEffect(()=>{
     setTimeout(()=>{
         setLoading(false)
-        const newScore = score + ScoreAdder(currentMove,houseMove)
-        updateScore(newScore)
     },1000)
-    return (()=>{setLoading(true)})
-},[currentMove,round])
 
-  useEffect(()=>{
-    setHouseMove(houseMovePicker())
-  },[round])
+    return (()=>{setLoading(true)})
+},[round])
+
+useEffect(()=>{
+  const newScore = score + ScoreAdder(currentMove,houseMove)
+  console.log(newScore)
+  updateScore(newScore)
+},[round])
+
   
   const NextMove = (move:string) =>{
-    setRound(round+1)
     setMove(move)
+    setHouseMove(houseMovePicker())
+    setRound(round+1)
   }
 
 
